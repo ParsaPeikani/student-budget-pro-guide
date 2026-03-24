@@ -1,0 +1,240 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>References — Smart Student Budgeting</title>
+  <script src="https://cdn.tailwindcss.com"></script>
+  <script>
+    tailwind.config = {
+      theme: {
+        extend: {
+          colors: {
+            brand: { 50:'#ecfdf5',100:'#d1fae5',200:'#a7f3d0',300:'#6ee7b7',400:'#34d399',500:'#10b981',600:'#059669',700:'#047857',800:'#065f46',900:'#064e3b',950:'#022c22' }
+          }
+        }
+      }
+    }
+  </script>
+  <style>
+    html{scroll-behavior:smooth}
+    body{font-family:system-ui,-apple-system,BlinkMacSystemFont,'Segoe UI',Roboto,sans-serif}
+    .ref-entry{text-indent:-2em;padding-left:2em}
+  </style>
+</head>
+<body class="bg-gray-50 text-gray-800">
+
+  <!-- Navigation -->
+  <nav class="bg-brand-900 text-white sticky top-0 z-50 shadow-lg">
+    <div class="max-w-7xl mx-auto px-4">
+      <div class="flex items-center justify-between h-16">
+        <a href="index.html" class="text-lg font-bold tracking-tight flex items-center gap-2">
+          <span class="text-2xl">💰</span> Smart Student Budgeting
+        </a>
+        <button id="menuBtn" class="lg:hidden p-2 rounded-md hover:bg-brand-800" aria-label="Toggle menu">
+          <svg class="w-6 h-6" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M4 6h16M4 12h16M4 18h16"/></svg>
+        </button>
+        <div class="hidden lg:flex items-center gap-1">
+          <a href="index.html" class="px-3 py-2 rounded-md text-sm font-medium hover:bg-brand-800 transition">Home</a>
+          <a href="income-vs-expenses.html" class="px-3 py-2 rounded-md text-sm font-medium hover:bg-brand-800 transition">Income vs. Expenses</a>
+          <a href="track-spending.html" class="px-3 py-2 rounded-md text-sm font-medium hover:bg-brand-800 transition">Track Spending</a>
+          <a href="budgeting-traps.html" class="px-3 py-2 rounded-md text-sm font-medium hover:bg-brand-800 transition">Budgeting Traps</a>
+          <a href="fifty-thirty-twenty.html" class="px-3 py-2 rounded-md text-sm font-medium hover:bg-brand-800 transition">50/30/20 Rule</a>
+          <a href="build-your-budget.html" class="px-3 py-2 rounded-md text-sm font-medium hover:bg-brand-800 transition">Build Your Budget</a>
+          <a href="references.html" class="px-3 py-2 rounded-md text-sm font-medium bg-brand-700">References</a>
+        </div>
+      </div>
+      <div class="lg:hidden hidden pb-4" id="mobileNav">
+        <a href="index.html" class="block px-3 py-2 rounded-md text-sm font-medium hover:bg-brand-800">Home</a>
+        <a href="income-vs-expenses.html" class="block px-3 py-2 rounded-md text-sm font-medium hover:bg-brand-800">Income vs. Expenses</a>
+        <a href="track-spending.html" class="block px-3 py-2 rounded-md text-sm font-medium hover:bg-brand-800">Track Spending</a>
+        <a href="budgeting-traps.html" class="block px-3 py-2 rounded-md text-sm font-medium hover:bg-brand-800">Budgeting Traps</a>
+        <a href="fifty-thirty-twenty.html" class="block px-3 py-2 rounded-md text-sm font-medium hover:bg-brand-800">50/30/20 Rule</a>
+        <a href="build-your-budget.html" class="block px-3 py-2 rounded-md text-sm font-medium hover:bg-brand-800">Build Your Budget</a>
+        <a href="references.html" class="block px-3 py-2 rounded-md text-sm font-medium bg-brand-700">References</a>
+      </div>
+    </div>
+  </nav>
+
+  <!-- Page Header -->
+  <header class="bg-gradient-to-r from-brand-800 to-brand-700 text-white py-12">
+    <div class="max-w-4xl mx-auto px-4">
+      <h1 class="text-3xl md:text-4xl font-extrabold mb-3">📚 References &amp; Credits</h1>
+      <p class="text-brand-200 text-lg max-w-2xl">Academic sources, instructional design frameworks, license information, and acknowledgments.</p>
+    </div>
+  </header>
+
+  <main class="max-w-4xl mx-auto px-4 py-12 space-y-12">
+
+    <!-- Academic References -->
+    <section>
+      <h2 class="text-2xl font-bold text-brand-900 mb-6">Academic References</h2>
+      <div class="bg-white rounded-2xl shadow-md p-6 md:p-8 space-y-4 text-sm text-gray-700 leading-relaxed">
+        <p class="ref-entry">Canadian University Survey Consortium. (2023). <em>2023 graduating student survey: Master report</em>. CUSC-CCREU. <a href="https://cusc-ccreu.ca/" target="_blank" rel="noopener" class="text-brand-600 hover:underline">https://cusc-ccreu.ca/</a></p>
+
+        <p class="ref-entry">Fernbach, P. M., Kan, C., &amp; Lynch, J. G. (2015). Squeezed: Coping with constraint through efficiency and prioritization. <em>Journal of Consumer Research</em>, <em>41</em>(5), 1204–1227. <a href="https://doi.org/10.1086/679118" target="_blank" rel="noopener" class="text-brand-600 hover:underline">https://doi.org/10.1086/679118</a></p>
+
+        <p class="ref-entry">Financial Consumer Agency of Canada. (2024). <em>Managing your money: A guide for young adults</em>. Government of Canada. <a href="https://www.canada.ca/en/financial-consumer-agency.html" target="_blank" rel="noopener" class="text-brand-600 hover:underline">https://www.canada.ca/en/financial-consumer-agency.html</a></p>
+
+        <p class="ref-entry">Lusardi, A., &amp; Mitchell, O. S. (2014). The economic importance of financial literacy: Theory and evidence. <em>Journal of Economic Literature</em>, <em>52</em>(1), 5–44. <a href="https://doi.org/10.1257/jel.52.1.5" target="_blank" rel="noopener" class="text-brand-600 hover:underline">https://doi.org/10.1257/jel.52.1.5</a></p>
+
+        <p class="ref-entry">Prelec, D., &amp; Simester, D. (2001). Always leave home without it: A further investigation of the credit-card effect on willingness to pay. <em>Marketing Letters</em>, <em>12</em>(1), 5–12. <a href="https://doi.org/10.1023/A:1008196717017" target="_blank" rel="noopener" class="text-brand-600 hover:underline">https://doi.org/10.1023/A:1008196717017</a></p>
+
+        <p class="ref-entry">Shefrin, H. M., &amp; Thaler, R. H. (1988). The behavioral life-cycle hypothesis. <em>Economic Inquiry</em>, <em>26</em>(4), 609–643. <a href="https://doi.org/10.1111/j.1465-7295.1988.tb01520.x" target="_blank" rel="noopener" class="text-brand-600 hover:underline">https://doi.org/10.1111/j.1465-7295.1988.tb01520.x</a></p>
+
+        <p class="ref-entry">Soman, D. (2001). Effects of payment mechanism on spending behavior: The role of rehearsal and immediacy of payments. <em>Journal of Consumer Research</em>, <em>27</em>(4), 460–474. <a href="https://doi.org/10.1086/319621" target="_blank" rel="noopener" class="text-brand-600 hover:underline">https://doi.org/10.1086/319621</a></p>
+
+        <p class="ref-entry">Warren, E., &amp; Tyagi, A. W. (2005). <em>All your worth: The ultimate lifetime money plan</em>. Free Press.</p>
+      </div>
+    </section>
+
+    <!-- Instructional Design References -->
+    <section>
+      <h2 class="text-2xl font-bold text-brand-900 mb-6">Instructional Design Frameworks</h2>
+      <div class="bg-white rounded-2xl shadow-md p-6 md:p-8">
+        <p class="text-sm text-gray-700 mb-6">This OER was designed using the following evidence-based instructional design theories and principles:</p>
+
+        <div class="space-y-6">
+          <div class="border-l-4 border-brand-500 pl-4">
+            <h3 class="font-bold text-brand-800">Universal Design for Learning (UDL)</h3>
+            <p class="text-sm text-gray-600 mt-1">Multiple means of engagement (interactive quizzes, hands-on tools), representation (text, visuals, examples), and action/expression (sorting exercises, budget building, downloadable outputs).</p>
+            <p class="ref-entry text-xs text-gray-500 mt-2">CAST. (2018). <em>Universal Design for Learning Guidelines version 2.2</em>. <a href="https://udlguidelines.cast.org/" target="_blank" rel="noopener" class="text-brand-600 hover:underline">https://udlguidelines.cast.org/</a></p>
+          </div>
+
+          <div class="border-l-4 border-brand-500 pl-4">
+            <h3 class="font-bold text-brand-800">Mayer's Multimedia Learning Principles</h3>
+            <p class="text-sm text-gray-600 mt-1"><strong>Coherence:</strong> Only relevant content is included; no decorative distractions. <strong>Signaling:</strong> Headers, color-coding, and icons guide attention. <strong>Redundancy:</strong> Visuals complement text rather than duplicating it. <strong>Spatial contiguity:</strong> Related text and visuals are placed together. <strong>Segmenting:</strong> Content is broken into manageable modules.</p>
+            <p class="ref-entry text-xs text-gray-500 mt-2">Mayer, R. E. (2009). <em>Multimedia learning</em> (2nd ed.). Cambridge University Press.</p>
+          </div>
+
+          <div class="border-l-4 border-brand-500 pl-4">
+            <h3 class="font-bold text-brand-800">Cognitive Load Theory</h3>
+            <p class="text-sm text-gray-600 mt-1"><strong>Extraneous load:</strong> Minimized through clean layout, consistent navigation, and removal of unnecessary complexity. <strong>Intrinsic load:</strong> Managed by building from simple concepts (Module 1) to complex application (Module 5). <strong>Germane load:</strong> Optimized through interactive exercises that encourage active processing.</p>
+            <p class="ref-entry text-xs text-gray-500 mt-2">Sweller, J., Ayres, P., &amp; Kalyuga, S. (2011). <em>Cognitive load theory</em>. Springer.</p>
+          </div>
+
+          <div class="border-l-4 border-brand-500 pl-4">
+            <h3 class="font-bold text-brand-800">Merrill's Principles of Instruction</h3>
+            <p class="text-sm text-gray-600 mt-1"><strong>Problem-centered:</strong> The entire resource is built around solving a real student problem (managing money). <strong>Activation:</strong> "Quick Reality Check" on the home page activates prior experience. <strong>Demonstration:</strong> Each module shows concrete examples and scenarios. <strong>Application:</strong> Interactive tools let learners practice with their own data. <strong>Integration:</strong> The final module ties everything together into a real-world artifact.</p>
+            <p class="ref-entry text-xs text-gray-500 mt-2">Merrill, M. D. (2002). First principles of instruction. <em>Educational Technology Research and Development</em>, <em>50</em>(3), 43–59. <a href="https://doi.org/10.1007/BF02505024" target="_blank" rel="noopener" class="text-brand-600 hover:underline">https://doi.org/10.1007/BF02505024</a></p>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- License -->
+    <section>
+      <h2 class="text-2xl font-bold text-brand-900 mb-6">License</h2>
+      <div class="bg-white rounded-2xl shadow-md p-6 md:p-8">
+        <div class="flex flex-col sm:flex-row items-start gap-6">
+          <div class="flex-shrink-0">
+            <a href="https://creativecommons.org/licenses/by/4.0/" target="_blank" rel="noopener">
+              <img src="https://licensebuttons.net/l/by/4.0/88x31.png" alt="Creative Commons License CC BY 4.0" class="rounded">
+            </a>
+          </div>
+          <div>
+            <p class="text-sm text-gray-700 leading-relaxed mb-3">
+              <strong>Smart Student Budgeting</strong> is licensed under a
+              <a href="https://creativecommons.org/licenses/by/4.0/" target="_blank" rel="noopener" class="text-brand-600 hover:underline font-semibold">Creative Commons Attribution 4.0 International License (CC BY 4.0)</a>.
+            </p>
+            <p class="text-sm text-gray-600 leading-relaxed mb-3">This means you are free to:</p>
+            <ul class="text-sm text-gray-600 space-y-1 mb-3">
+              <li class="flex items-start gap-2"><span class="text-brand-500">&#10003;</span> <strong>Share</strong> — copy and redistribute the material in any medium or format</li>
+              <li class="flex items-start gap-2"><span class="text-brand-500">&#10003;</span> <strong>Adapt</strong> — remix, transform, and build upon the material for any purpose, even commercially</li>
+            </ul>
+            <p class="text-sm text-gray-600 leading-relaxed">Under the following terms:</p>
+            <ul class="text-sm text-gray-600 space-y-1 mt-1">
+              <li class="flex items-start gap-2"><span class="text-brand-500">&#9679;</span> <strong>Attribution</strong> — You must give appropriate credit, provide a link to the license, and indicate if changes were made.</li>
+            </ul>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- Credits -->
+    <section>
+      <h2 class="text-2xl font-bold text-brand-900 mb-6">Credits &amp; Acknowledgments</h2>
+      <div class="bg-white rounded-2xl shadow-md p-6 md:p-8 space-y-4 text-sm text-gray-700">
+        <div>
+          <h3 class="font-bold text-gray-900 mb-1">Course</h3>
+          <p>EDCI 337 — Interactive and Multimedia Learning, University of Victoria</p>
+        </div>
+        <div>
+          <h3 class="font-bold text-gray-900 mb-1">Technology</h3>
+          <p>Built with HTML, CSS (<a href="https://tailwindcss.com" target="_blank" rel="noopener" class="text-brand-600 hover:underline">Tailwind CSS</a> via CDN), and vanilla JavaScript. No external frameworks or dependencies beyond Tailwind.</p>
+        </div>
+        <div>
+          <h3 class="font-bold text-gray-900 mb-1">Icons &amp; Visual Elements</h3>
+          <p>Emoji icons used throughout for visual cues. No external icon libraries were used.</p>
+        </div>
+        <div>
+          <h3 class="font-bold text-gray-900 mb-1">Design Inspiration</h3>
+          <p>Layout and navigation design inspired by modern OER sites and educational web resources.</p>
+        </div>
+      </div>
+    </section>
+
+    <!-- Further Reading -->
+    <section class="bg-brand-50 border border-brand-200 rounded-2xl p-6 md:p-8">
+      <h2 class="text-xl font-bold text-brand-900 mb-4">Further Reading &amp; Resources</h2>
+      <div class="grid sm:grid-cols-2 gap-4 text-sm">
+        <div class="bg-white rounded-xl p-4">
+          <h3 class="font-bold text-gray-800 mb-2">Free Budgeting Tools</h3>
+          <ul class="space-y-1 text-gray-600">
+            <li>&#8226; <a href="https://www.mint.com" target="_blank" rel="noopener" class="text-brand-600 hover:underline">Mint</a> — Free budgeting app</li>
+            <li>&#8226; <a href="https://www.youneedabudget.com" target="_blank" rel="noopener" class="text-brand-600 hover:underline">YNAB</a> — Zero-based budgeting (free for students)</li>
+            <li>&#8226; Google Sheets — Free spreadsheet for custom budgets</li>
+          </ul>
+        </div>
+        <div class="bg-white rounded-xl p-4">
+          <h3 class="font-bold text-gray-800 mb-2">Canadian Student Resources</h3>
+          <ul class="space-y-1 text-gray-600">
+            <li>&#8226; <a href="https://www.canada.ca/en/financial-consumer-agency/services/financial-literacy-programs.html" target="_blank" rel="noopener" class="text-brand-600 hover:underline">Financial Consumer Agency of Canada</a></li>
+            <li>&#8226; <a href="https://www.canada.ca/en/services/benefits/education.html" target="_blank" rel="noopener" class="text-brand-600 hover:underline">Student Financial Assistance</a></li>
+            <li>&#8226; Your campus financial aid office</li>
+          </ul>
+        </div>
+        <div class="bg-white rounded-xl p-4">
+          <h3 class="font-bold text-gray-800 mb-2">Books</h3>
+          <ul class="space-y-1 text-gray-600">
+            <li>&#8226; <em>The Wealthy Barber Returns</em> by David Chilton</li>
+            <li>&#8226; <em>Wealthing Like Rabbits</em> by Robert R. Brown</li>
+            <li>&#8226; <em>Millionaire Teacher</em> by Andrew Hallam</li>
+          </ul>
+        </div>
+        <div class="bg-white rounded-xl p-4">
+          <h3 class="font-bold text-gray-800 mb-2">Podcasts &amp; Videos</h3>
+          <ul class="space-y-1 text-gray-600">
+            <li>&#8226; <em>The Financial Diet</em> (YouTube)</li>
+            <li>&#8226; <em>More Money Podcast</em> by Jessica Moorhouse</li>
+            <li>&#8226; Khan Academy Personal Finance (free course)</li>
+          </ul>
+        </div>
+      </div>
+    </section>
+
+    <!-- Nav -->
+    <div class="flex justify-between items-center pt-4">
+      <a href="build-your-budget.html" class="text-brand-600 hover:text-brand-700 font-medium text-sm flex items-center gap-1">&larr; Build Your Budget</a>
+      <a href="index.html" class="bg-brand-600 hover:bg-brand-700 text-white font-semibold px-6 py-2.5 rounded-lg transition flex items-center gap-2">
+        Back to Home &rarr;
+      </a>
+    </div>
+  </main>
+
+  <!-- Footer -->
+  <footer class="bg-brand-950 text-brand-300 py-8 mt-12">
+    <div class="max-w-5xl mx-auto px-4 text-center text-sm space-y-2">
+      <p>Smart Student Budgeting — An Open Educational Resource for EDCI 337</p>
+      <p>Licensed under <a href="https://creativecommons.org/licenses/by/4.0/" target="_blank" rel="noopener" class="underline hover:text-white">Creative Commons Attribution 4.0 International (CC BY 4.0)</a></p>
+      <p class="text-brand-500">&copy; 2026</p>
+    </div>
+  </footer>
+
+  <script>
+    document.getElementById('menuBtn').addEventListener('click', () => {
+      document.getElementById('mobileNav').classList.toggle('hidden');
+    });
+  </script>
+</body>
+</html>

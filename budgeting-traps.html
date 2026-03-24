@@ -1,0 +1,443 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>5 Budgeting Traps — Smart Student Budgeting</title>
+  <script src="https://cdn.tailwindcss.com"></script>
+  <script>
+    tailwind.config = {
+      theme: {
+        extend: {
+          colors: {
+            brand: { 50:'#ecfdf5',100:'#d1fae5',200:'#a7f3d0',300:'#6ee7b7',400:'#34d399',500:'#10b981',600:'#059669',700:'#047857',800:'#065f46',900:'#064e3b',950:'#022c22' }
+          }
+        }
+      }
+    }
+  </script>
+  <style>
+    html{scroll-behavior:smooth}
+    body{font-family:system-ui,-apple-system,BlinkMacSystemFont,'Segoe UI',Roboto,sans-serif}
+    .trap-card{transition:transform .15s}
+    .trap-card:hover{transform:translateY(-2px)}
+  </style>
+</head>
+<body class="bg-gray-50 text-gray-800">
+
+  <!-- Navigation -->
+  <nav class="bg-brand-900 text-white sticky top-0 z-50 shadow-lg">
+    <div class="max-w-7xl mx-auto px-4">
+      <div class="flex items-center justify-between h-16">
+        <a href="index.html" class="text-lg font-bold tracking-tight flex items-center gap-2">
+          <span class="text-2xl">💰</span> Smart Student Budgeting
+        </a>
+        <button id="menuBtn" class="lg:hidden p-2 rounded-md hover:bg-brand-800" aria-label="Toggle menu">
+          <svg class="w-6 h-6" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M4 6h16M4 12h16M4 18h16"/></svg>
+        </button>
+        <div class="hidden lg:flex items-center gap-1">
+          <a href="index.html" class="px-3 py-2 rounded-md text-sm font-medium hover:bg-brand-800 transition">Home</a>
+          <a href="income-vs-expenses.html" class="px-3 py-2 rounded-md text-sm font-medium hover:bg-brand-800 transition">Income vs. Expenses</a>
+          <a href="track-spending.html" class="px-3 py-2 rounded-md text-sm font-medium hover:bg-brand-800 transition">Track Spending</a>
+          <a href="budgeting-traps.html" class="px-3 py-2 rounded-md text-sm font-medium bg-brand-700">Budgeting Traps</a>
+          <a href="fifty-thirty-twenty.html" class="px-3 py-2 rounded-md text-sm font-medium hover:bg-brand-800 transition">50/30/20 Rule</a>
+          <a href="build-your-budget.html" class="px-3 py-2 rounded-md text-sm font-medium hover:bg-brand-800 transition">Build Your Budget</a>
+          <a href="references.html" class="px-3 py-2 rounded-md text-sm font-medium hover:bg-brand-800 transition">References</a>
+        </div>
+      </div>
+      <div class="lg:hidden hidden pb-4" id="mobileNav">
+        <a href="index.html" class="block px-3 py-2 rounded-md text-sm font-medium hover:bg-brand-800">Home</a>
+        <a href="income-vs-expenses.html" class="block px-3 py-2 rounded-md text-sm font-medium hover:bg-brand-800">Income vs. Expenses</a>
+        <a href="track-spending.html" class="block px-3 py-2 rounded-md text-sm font-medium hover:bg-brand-800">Track Spending</a>
+        <a href="budgeting-traps.html" class="block px-3 py-2 rounded-md text-sm font-medium bg-brand-700">Budgeting Traps</a>
+        <a href="fifty-thirty-twenty.html" class="block px-3 py-2 rounded-md text-sm font-medium hover:bg-brand-800">50/30/20 Rule</a>
+        <a href="build-your-budget.html" class="block px-3 py-2 rounded-md text-sm font-medium hover:bg-brand-800">Build Your Budget</a>
+        <a href="references.html" class="block px-3 py-2 rounded-md text-sm font-medium hover:bg-brand-800">References</a>
+      </div>
+    </div>
+  </nav>
+
+  <!-- Page Header -->
+  <header class="bg-gradient-to-r from-brand-800 to-brand-700 text-white py-12">
+    <div class="max-w-4xl mx-auto px-4">
+      <p class="text-brand-300 text-sm font-semibold uppercase tracking-widest mb-2">Module 3</p>
+      <h1 class="text-3xl md:text-4xl font-extrabold mb-3">🪤 5 Common Budgeting Traps</h1>
+      <p class="text-brand-200 text-lg max-w-2xl">Even students with good intentions fall into these traps. Learn to recognize them before they drain your wallet.</p>
+    </div>
+  </header>
+
+  <main class="max-w-4xl mx-auto px-4 py-12 space-y-10">
+
+    <p class="text-gray-700 leading-relaxed">Budgeting failures rarely happen because of one big purchase. They happen because of <strong>repeated small decisions</strong> driven by psychological patterns. Below are the five most common traps that catch university students — and what to do about each one.</p>
+
+    <!-- Warning Stat Cards -->
+    <section class="grid sm:grid-cols-3 gap-4">
+      <div class="bg-white rounded-xl shadow-sm p-5 text-center border-t-4 border-red-500">
+        <p class="text-3xl font-extrabold text-red-600">$900</p>
+        <p class="text-sm text-gray-600 mt-1">avg. lost to forgotten subscriptions/yr</p>
+      </div>
+      <div class="bg-white rounded-xl shadow-sm p-5 text-center border-t-4 border-orange-500">
+        <p class="text-3xl font-extrabold text-orange-600">100%</p>
+        <p class="text-sm text-gray-600 mt-1">more spent with cards vs. cash</p>
+      </div>
+      <div class="bg-white rounded-xl shadow-sm p-5 text-center border-t-4 border-purple-500">
+        <p class="text-3xl font-extrabold text-purple-600">2.5</p>
+        <p class="text-sm text-gray-600 mt-1">extra subscriptions people forget about</p>
+      </div>
+    </section>
+
+    <!-- Trap Danger Scale Visual -->
+    <section class="bg-white rounded-2xl shadow-md p-6 md:p-8">
+      <h2 class="text-xl font-bold text-brand-900 mb-4 flex items-center gap-2">⚠️ Trap Danger Scale</h2>
+      <p class="text-sm text-gray-600 mb-4">How much each trap can cost students per semester if left unchecked:</p>
+      <div class="space-y-3">
+        <div>
+          <div class="flex justify-between text-sm font-medium mb-1"><span>🔴 Procrastination</span><span class="text-red-600">~$3,000 in untracked spending</span></div>
+          <div class="h-5 bg-gray-100 rounded-full overflow-hidden"><div class="h-5 bg-red-500 rounded-full" style="width:90%"></div></div>
+        </div>
+        <div>
+          <div class="flex justify-between text-sm font-medium mb-1"><span>🟠 Subscription Creep</span><span class="text-orange-600">~$420/year wasted</span></div>
+          <div class="h-5 bg-gray-100 rounded-full overflow-hidden"><div class="h-5 bg-orange-500 rounded-full" style="width:55%"></div></div>
+        </div>
+        <div>
+          <div class="flex justify-between text-sm font-medium mb-1"><span>🟣 Emotional Spending</span><span class="text-purple-600">~$200-400/month</span></div>
+          <div class="h-5 bg-gray-100 rounded-full overflow-hidden"><div class="h-5 bg-purple-500 rounded-full" style="width:70%"></div></div>
+        </div>
+        <div>
+          <div class="flex justify-between text-sm font-medium mb-1"><span>🔵 Credit Card Illusion</span><span class="text-blue-600">~$240/year in interest</span></div>
+          <div class="h-5 bg-gray-100 rounded-full overflow-hidden"><div class="h-5 bg-blue-500 rounded-full" style="width:50%"></div></div>
+        </div>
+        <div>
+          <div class="flex justify-between text-sm font-medium mb-1"><span>🩷 Social Pressure</span><span class="text-pink-600">~$560/semester</span></div>
+          <div class="h-5 bg-gray-100 rounded-full overflow-hidden"><div class="h-5 bg-pink-500 rounded-full" style="width:60%"></div></div>
+        </div>
+      </div>
+    </section>
+
+    <!-- Trap 1 -->
+    <div class="trap-card bg-white rounded-2xl shadow-md overflow-hidden">
+      <div class="bg-red-500 px-6 py-4 flex items-center gap-3">
+        <span class="bg-white/20 rounded-full w-10 h-10 flex items-center justify-center text-xl font-bold">1</span>
+        <div>
+          <h2 class="text-white font-bold text-lg">The "I'll Start Next Month" Trap</h2>
+          <p class="text-red-100 text-sm">Procrastination</p>
+        </div>
+      </div>
+      <div class="p-6 space-y-4">
+        <div>
+          <h3 class="font-bold text-gray-800 text-sm uppercase tracking-wider mb-2">What It Looks Like</h3>
+          <p class="text-gray-700 text-sm leading-relaxed">You tell yourself you will start budgeting "next month" or "after this one expensive week." But next month never comes, because there is always another reason to delay. This is a form of <em>present bias</em> — our tendency to prioritize immediate comfort over future well-being.</p>
+        </div>
+        <div class="bg-gray-50 rounded-xl p-4">
+          <h3 class="font-bold text-gray-800 text-sm uppercase tracking-wider mb-2">🎓 Student Scenario</h3>
+          <p class="text-gray-600 text-sm italic">"It's Frosh Week, so obviously I'm going to overspend. I'll start tracking in October." October arrives: "Midterms are stressful, I'll start after." By December, you realize you have no idea where $3,000 went over the semester.</p>
+        </div>
+        <div class="bg-brand-50 border border-brand-200 rounded-xl p-4">
+          <h3 class="font-bold text-brand-700 text-sm uppercase tracking-wider mb-2">💡 How to Avoid It</h3>
+          <p class="text-sm text-brand-800">Start today with just one action: write down everything you spend for the next 24 hours. That is your budget starting point. You do not need a perfect system — you need a first step. Track for one day, then one week, then it becomes a habit.</p>
+        </div>
+      </div>
+    </div>
+
+    <!-- Trap 2 -->
+    <div class="trap-card bg-white rounded-2xl shadow-md overflow-hidden">
+      <div class="bg-orange-500 px-6 py-4 flex items-center gap-3">
+        <span class="bg-white/20 rounded-full w-10 h-10 flex items-center justify-center text-xl font-bold">2</span>
+        <div>
+          <h2 class="text-white font-bold text-lg">The Subscription Creep</h2>
+          <p class="text-orange-100 text-sm">Death by a Thousand Small Charges</p>
+        </div>
+      </div>
+      <div class="p-6 space-y-4">
+        <div>
+          <h3 class="font-bold text-gray-800 text-sm uppercase tracking-wider mb-2">What It Looks Like</h3>
+          <p class="text-gray-700 text-sm leading-relaxed">Each subscription seems tiny: $6 here, $13 there, $10 for that app. But they pile up silently because they charge automatically. Studies show the average person underestimates their monthly subscriptions by about 2.5 services. For students, that can mean $30–$60/month of invisible spending.</p>
+        </div>
+        <div class="bg-gray-50 rounded-xl p-4">
+          <h3 class="font-bold text-gray-800 text-sm uppercase tracking-wider mb-2">🎓 Student Scenario</h3>
+          <p class="text-gray-600 text-sm italic">Ava has Netflix ($17), Spotify ($11), iCloud storage ($4), a fitness app ($10), Adobe Creative Cloud from a free trial she forgot to cancel ($27), and a news site ($6). That is $75/month — $900/year — and she only actively uses two of them.</p>
+        </div>
+        <div class="bg-brand-50 border border-brand-200 rounded-xl p-4">
+          <h3 class="font-bold text-brand-700 text-sm uppercase tracking-wider mb-2">💡 How to Avoid It</h3>
+          <p class="text-sm text-brand-800">Do a "subscription audit" right now. Check your bank statement for the last 30 days and highlight every recurring charge. Cancel anything you have not used in the past two weeks. Set a calendar reminder to repeat this audit every three months.</p>
+        </div>
+      </div>
+    </div>
+
+    <!-- Trap 3 -->
+    <div class="trap-card bg-white rounded-2xl shadow-md overflow-hidden">
+      <div class="bg-purple-500 px-6 py-4 flex items-center gap-3">
+        <span class="bg-white/20 rounded-full w-10 h-10 flex items-center justify-center text-xl font-bold">3</span>
+        <div>
+          <h2 class="text-white font-bold text-lg">The "I Deserve It" Trap</h2>
+          <p class="text-purple-100 text-sm">Emotional &amp; Impulse Spending</p>
+        </div>
+      </div>
+      <div class="p-6 space-y-4">
+        <div>
+          <h3 class="font-bold text-gray-800 text-sm uppercase tracking-wider mb-2">What It Looks Like</h3>
+          <p class="text-gray-700 text-sm leading-relaxed">After a tough exam, a stressful week, or even just a boring afternoon, your brain craves a reward. "I worked so hard, I deserve this." The spending feels justified in the moment but adds up quickly. This is <em>emotional spending</em> — using purchases to regulate mood rather than meet actual needs.</p>
+        </div>
+        <div class="bg-gray-50 rounded-xl p-4">
+          <h3 class="font-bold text-gray-800 text-sm uppercase tracking-wider mb-2">🎓 Student Scenario</h3>
+          <p class="text-gray-600 text-sm italic">Marcus finishes a brutal midterm on Friday. He treats himself to a $45 dinner out, a $20 movie night, and a $35 online order for a hoodie he saw on Instagram. In one weekend, he spent $100 on "rewards." This happens two or three times a month.</p>
+        </div>
+        <div class="bg-brand-50 border border-brand-200 rounded-xl p-4">
+          <h3 class="font-bold text-brand-700 text-sm uppercase tracking-wider mb-2">💡 How to Avoid It</h3>
+          <p class="text-sm text-brand-800">Build a small "fun money" allowance into your budget — maybe $40–$60/month — so treating yourself is <em>planned</em>, not impulsive. When you feel the urge to splurge, use the <strong>24-hour rule</strong>: wait a full day before making any non-essential purchase over $20. Most impulses fade overnight.</p>
+        </div>
+      </div>
+    </div>
+
+    <!-- Trap 4 -->
+    <div class="trap-card bg-white rounded-2xl shadow-md overflow-hidden">
+      <div class="bg-blue-500 px-6 py-4 flex items-center gap-3">
+        <span class="bg-white/20 rounded-full w-10 h-10 flex items-center justify-center text-xl font-bold">4</span>
+        <div>
+          <h2 class="text-white font-bold text-lg">The Credit Card Illusion</h2>
+          <p class="text-blue-100 text-sm">Painless Spending, Painful Bills</p>
+        </div>
+      </div>
+      <div class="p-6 space-y-4">
+        <div>
+          <h3 class="font-bold text-gray-800 text-sm uppercase tracking-wider mb-2">What It Looks Like</h3>
+          <p class="text-gray-700 text-sm leading-relaxed">Behavioral economists call it the "pain of paying" — handing over physical cash triggers a mild sense of loss that makes you think twice. Tapping a card or clicking "buy" online removes that friction entirely. Research by Prelec and Simester (2001) found people are willing to spend <strong>up to 100% more</strong> when using credit cards versus cash.</p>
+        </div>
+        <div class="bg-gray-50 rounded-xl p-4">
+          <h3 class="font-bold text-gray-800 text-sm uppercase tracking-wider mb-2">🎓 Student Scenario</h3>
+          <p class="text-gray-600 text-sm italic">Jordan got a student credit card with a $1,500 limit. Over three months, she tapped it for coffee, takeout, online orders, and a weekend trip — barely noticing the running total. Her first statement showed $1,200 owed. At 19.99% interest, carrying that balance for a year would cost her an extra $240.</p>
+        </div>
+        <div class="bg-brand-50 border border-brand-200 rounded-xl p-4">
+          <h3 class="font-bold text-brand-700 text-sm uppercase tracking-wider mb-2">💡 How to Avoid It</h3>
+          <p class="text-sm text-brand-800">Use your credit card only for planned purchases, and pay the full balance every month. For discretionary spending, try the "cash envelope" method: withdraw a fixed amount of cash each week for fun money. When the cash runs out, you stop. The physical act of handing over bills makes overspending much harder.</p>
+        </div>
+      </div>
+    </div>
+
+    <!-- Trap 5 -->
+    <div class="trap-card bg-white rounded-2xl shadow-md overflow-hidden">
+      <div class="bg-pink-500 px-6 py-4 flex items-center gap-3">
+        <span class="bg-white/20 rounded-full w-10 h-10 flex items-center justify-center text-xl font-bold">5</span>
+        <div>
+          <h2 class="text-white font-bold text-lg">The Social Pressure Trap</h2>
+          <p class="text-pink-100 text-sm">FOMO Spending</p>
+        </div>
+      </div>
+      <div class="p-6 space-y-4">
+        <div>
+          <h3 class="font-bold text-gray-800 text-sm uppercase tracking-wider mb-2">What It Looks Like</h3>
+          <p class="text-gray-700 text-sm leading-relaxed">Your friend group wants to eat out. Someone suggests a weekend trip. A group chat buzzes with plans for a festival. Saying "no" feels awkward, even embarrassing. So you spend money you do not have to avoid feeling left out. This <em>fear of missing out</em> (FOMO) is amplified by social media, where everyone's highlight reel makes it look like spending = living.</p>
+        </div>
+        <div class="bg-gray-50 rounded-xl p-4">
+          <h3 class="font-bold text-gray-800 text-sm uppercase tracking-wider mb-2">🎓 Student Scenario</h3>
+          <p class="text-gray-600 text-sm italic">Every Thursday, Sam's friends go to a restaurant where the average bill is $35. Sam cannot afford it weekly but goes anyway because "everyone is going." Over 4 months, that is $560 — more than a month's groceries — spent to avoid an uncomfortable conversation.</p>
+        </div>
+        <div class="bg-brand-50 border border-brand-200 rounded-xl p-4">
+          <h3 class="font-bold text-brand-700 text-sm uppercase tracking-wider mb-2">💡 How to Avoid It</h3>
+          <p class="text-sm text-brand-800">Be honest with your friends — you will be surprised how many feel the same way. Suggest cheaper alternatives: potluck dinners, movie nights at home, free campus events. Set a "social spending limit" per week and stick to it. Real friends will not judge you for being responsible with money.</p>
+        </div>
+      </div>
+    </div>
+
+    <!-- Summary -->
+    <section class="bg-white rounded-2xl shadow-md p-6 md:p-8">
+      <h2 class="text-xl font-bold text-brand-900 mb-4">Quick Reference: All 5 Traps</h2>
+      <div class="overflow-x-auto">
+        <table class="w-full text-sm">
+          <thead>
+            <tr class="border-b-2 border-gray-200">
+              <th class="text-left py-3 px-2 font-bold text-gray-800">#</th>
+              <th class="text-left py-3 px-2 font-bold text-gray-800">Trap</th>
+              <th class="text-left py-3 px-2 font-bold text-gray-800">Core Problem</th>
+              <th class="text-left py-3 px-2 font-bold text-gray-800">Quick Fix</th>
+            </tr>
+          </thead>
+          <tbody class="text-gray-600">
+            <tr class="border-b border-gray-100"><td class="py-3 px-2 font-bold text-red-500">1</td><td class="py-3 px-2">"I'll Start Next Month"</td><td class="py-3 px-2">Procrastination</td><td class="py-3 px-2">Start with one day of tracking</td></tr>
+            <tr class="border-b border-gray-100"><td class="py-3 px-2 font-bold text-orange-500">2</td><td class="py-3 px-2">Subscription Creep</td><td class="py-3 px-2">Invisible charges</td><td class="py-3 px-2">Monthly audit of bank statement</td></tr>
+            <tr class="border-b border-gray-100"><td class="py-3 px-2 font-bold text-purple-500">3</td><td class="py-3 px-2">"I Deserve It"</td><td class="py-3 px-2">Emotional spending</td><td class="py-3 px-2">24-hour rule + fun money budget</td></tr>
+            <tr class="border-b border-gray-100"><td class="py-3 px-2 font-bold text-blue-500">4</td><td class="py-3 px-2">Credit Card Illusion</td><td class="py-3 px-2">Painless spending</td><td class="py-3 px-2">Cash envelope for discretionary</td></tr>
+            <tr><td class="py-3 px-2 font-bold text-pink-500">5</td><td class="py-3 px-2">Social Pressure</td><td class="py-3 px-2">FOMO</td><td class="py-3 px-2">Weekly social spending limit</td></tr>
+          </tbody>
+        </table>
+      </div>
+    </section>
+
+    <!-- Interactive Quiz -->
+    <section>
+      <h2 class="text-2xl font-bold text-brand-900 mb-2 flex items-center gap-2">🧠 Quiz: Can You Spot the Trap?</h2>
+      <p class="text-gray-600 mb-6">Read each scenario and select which budgeting trap it represents. Get instant feedback on each answer.</p>
+
+      <div class="space-y-4" id="quizContainer">
+        <!-- Questions filled by JS -->
+      </div>
+
+      <div class="mt-6 flex flex-wrap gap-3 items-center">
+        <button onclick="submitQuiz()" class="bg-brand-600 hover:bg-brand-700 text-white font-semibold px-6 py-2.5 rounded-lg transition">Check All Answers</button>
+        <button onclick="resetQuiz()" class="bg-gray-200 hover:bg-gray-300 text-gray-700 font-semibold px-6 py-2.5 rounded-lg transition">Reset Quiz</button>
+        <span id="quizScore" class="text-sm font-medium"></span>
+      </div>
+      <div id="quizFeedback" class="mt-4"></div>
+    </section>
+
+    <!-- Quick Check Tip Box -->
+    <section class="bg-amber-50 border border-amber-200 rounded-2xl p-6 md:p-8">
+      <div class="flex items-start gap-3">
+        <span class="text-2xl">🛑</span>
+        <div>
+          <h2 class="text-lg font-bold text-amber-800 mb-3">Quick Check: Ask Yourself These 3 Questions Before Any Purchase</h2>
+          <ol class="space-y-2 text-sm text-amber-900">
+            <li class="flex items-start gap-2"><span class="bg-amber-200 text-amber-800 font-bold rounded-full w-6 h-6 flex items-center justify-center flex-shrink-0 text-xs">1</span> <span><strong>"Do I need this, or do I want this?"</strong> — If it is a want, check if it fits your weekly discretionary budget before buying.</span></li>
+            <li class="flex items-start gap-2"><span class="bg-amber-200 text-amber-800 font-bold rounded-full w-6 h-6 flex items-center justify-center flex-shrink-0 text-xs">2</span> <span><strong>"Am I buying this because I'm stressed, bored, or feeling FOMO?"</strong> — If yes, apply the 24-hour rule. Wait a full day and see if you still want it.</span></li>
+            <li class="flex items-start gap-2"><span class="bg-amber-200 text-amber-800 font-bold rounded-full w-6 h-6 flex items-center justify-center flex-shrink-0 text-xs">3</span> <span><strong>"What would I rather have at the end of the semester — this item, or that money in savings?"</strong> — Reframing purchases as trade-offs makes smarter choices easier.</span></li>
+          </ol>
+        </div>
+      </div>
+    </section>
+
+    <!-- Key Takeaways -->
+    <section class="bg-brand-50 border border-brand-200 rounded-2xl p-6 md:p-8">
+      <div class="flex items-center gap-2 mb-4">
+        <span class="text-2xl">💡</span>
+        <h2 class="text-xl font-bold text-brand-900">Key Takeaways</h2>
+      </div>
+      <ul class="space-y-2 text-sm text-gray-700">
+        <li class="flex items-start gap-2"><span class="text-brand-500 mt-0.5">&#10003;</span> Budgeting traps are psychological — they exploit how our brains naturally work.</li>
+        <li class="flex items-start gap-2"><span class="text-brand-500 mt-0.5">&#10003;</span> Awareness is the first defense. Now that you can name these traps, you can catch yourself before falling in.</li>
+        <li class="flex items-start gap-2"><span class="text-brand-500 mt-0.5">&#10003;</span> Every trap has a practical workaround. You do not need perfect willpower — you need the right systems.</li>
+        <li class="flex items-start gap-2"><span class="text-brand-500 mt-0.5">&#10003;</span> Talk to friends about money. Normalizing financial honesty reduces the social pressure trap for everyone.</li>
+      </ul>
+    </section>
+
+    <!-- Nav -->
+    <div class="flex justify-between items-center pt-4">
+      <a href="track-spending.html" class="text-brand-600 hover:text-brand-700 font-medium text-sm flex items-center gap-1">&larr; Track Spending</a>
+      <a href="fifty-thirty-twenty.html" class="bg-brand-600 hover:bg-brand-700 text-white font-semibold px-6 py-2.5 rounded-lg transition flex items-center gap-2">
+        Next: 50/30/20 Rule &rarr;
+      </a>
+    </div>
+  </main>
+
+  <!-- Footer -->
+  <footer class="bg-brand-950 text-brand-300 py-8 mt-12">
+    <div class="max-w-5xl mx-auto px-4 text-center text-sm space-y-2">
+      <p>Smart Student Budgeting — An Open Educational Resource for EDCI 337</p>
+      <p>Licensed under <a href="https://creativecommons.org/licenses/by/4.0/" target="_blank" rel="noopener" class="underline hover:text-white">Creative Commons Attribution 4.0 International (CC BY 4.0)</a></p>
+      <p class="text-brand-500">&copy; 2026</p>
+    </div>
+  </footer>
+
+  <script>
+    // Mobile menu
+    document.getElementById('menuBtn').addEventListener('click', () => {
+      document.getElementById('mobileNav').classList.toggle('hidden');
+    });
+
+    // Quiz Data
+    const quizData = [
+      {
+        scenario: "It's the end of September, and Priya tells herself she'll start tracking her money once October hits. When October comes, she decides to wait until after Thanksgiving because she knows she'll overspend on the holiday.",
+        answer: "start-next-month",
+        explanation: "This is the 'I'll Start Next Month' Trap — classic procrastination. There will always be a reason to delay. The best time to start is right now, even imperfectly."
+      },
+      {
+        scenario: "Kevin checks his bank statement and notices he's been charged $12/month for a meditation app he downloaded during finals last year, $8/month for a cloud storage plan, and $15/month for a music service he switched away from. He had forgotten about all three.",
+        answer: "subscription-creep",
+        explanation: "This is the Subscription Creep trap. Those three forgotten subscriptions total $35/month or $420/year — real money that could go toward savings or groceries."
+      },
+      {
+        scenario: "After pulling two all-nighters to finish a major project, Elena orders $50 worth of sushi delivery, buys a new phone case for $30, and signs up for a weekend spa deal at $45 — all within 24 hours of handing in her assignment.",
+        answer: "deserve-it",
+        explanation: "This is the 'I Deserve It' Trap — emotional reward spending after stress. The $125 impulse binge could have been replaced with a planned $30 treat and free relaxation like a walk or a nap."
+      },
+      {
+        scenario: "Tyler barely looks at prices when tapping his credit card — $7 here, $15 there. At the end of the month, his statement shows $800 in spending. He's shocked because none of the individual purchases felt significant.",
+        answer: "credit-card",
+        explanation: "This is the Credit Card Illusion. Without the 'pain of paying' that cash provides, small charges accumulate unnoticed. Setting up real-time transaction alerts can help restore that awareness."
+      },
+      {
+        scenario: "Every Friday, Mia's roommates plan dinner at a trendy restaurant. Mia's budget is tight, but she goes every week because she's worried they'll stop inviting her if she says no. She puts the meals on her credit card.",
+        answer: "social-pressure",
+        explanation: "This is the Social Pressure Trap. Mia is spending money she doesn't have to avoid social discomfort. Suggesting a cheaper alternative or being honest about her budget would save hundreds per semester."
+      }
+    ];
+
+    const trapOptions = [
+      { value: "start-next-month", label: "\"I'll Start Next Month\" (Procrastination)" },
+      { value: "subscription-creep", label: "Subscription Creep" },
+      { value: "deserve-it", label: "\"I Deserve It\" (Emotional Spending)" },
+      { value: "credit-card", label: "Credit Card Illusion" },
+      { value: "social-pressure", label: "Social Pressure (FOMO)" }
+    ];
+
+    function buildQuiz() {
+      const container = document.getElementById('quizContainer');
+      container.innerHTML = quizData.map((q, i) => {
+        const optionsHtml = trapOptions.map(opt =>
+          '<label class="flex items-center gap-2 cursor-pointer py-1"><input type="radio" name="q' + i + '" value="' + opt.value + '" class="accent-brand-600"> <span class="text-sm">' + opt.label + '</span></label>'
+        ).join('');
+
+        return '<div class="bg-white rounded-2xl shadow-md p-6" id="qCard' + i + '">' +
+          '<div class="flex items-start gap-3 mb-4">' +
+            '<span class="bg-brand-600 text-white font-bold rounded-full w-8 h-8 flex items-center justify-center flex-shrink-0 text-sm">' + (i + 1) + '</span>' +
+            '<p class="text-gray-700 text-sm leading-relaxed italic">"' + q.scenario + '"</p>' +
+          '</div>' +
+          '<div class="ml-11 space-y-1">' + optionsHtml + '</div>' +
+          '<div id="qFeedback' + i + '" class="ml-11 mt-3"></div>' +
+        '</div>';
+      }).join('');
+
+      document.getElementById('quizScore').textContent = '';
+      document.getElementById('quizFeedback').innerHTML = '';
+    }
+
+    function submitQuiz() {
+      let correct = 0;
+      quizData.forEach((q, i) => {
+        const selected = document.querySelector('input[name="q' + i + '"]:checked');
+        const feedbackEl = document.getElementById('qFeedback' + i);
+        const cardEl = document.getElementById('qCard' + i);
+
+        if (!selected) {
+          feedbackEl.innerHTML = '<div class="bg-yellow-50 border border-yellow-200 rounded-lg p-3 text-sm text-yellow-700">Please select an answer.</div>';
+          return;
+        }
+
+        if (selected.value === q.answer) {
+          correct++;
+          feedbackEl.innerHTML = '<div class="bg-green-50 border border-green-200 rounded-lg p-3 text-sm text-green-700"><strong>Correct!</strong> ' + q.explanation + '</div>';
+          cardEl.classList.add('ring-2', 'ring-green-400');
+          cardEl.classList.remove('ring-red-400');
+        } else {
+          feedbackEl.innerHTML = '<div class="bg-red-50 border border-red-200 rounded-lg p-3 text-sm text-red-700"><strong>Not quite.</strong> ' + q.explanation + '</div>';
+          cardEl.classList.add('ring-2', 'ring-red-400');
+          cardEl.classList.remove('ring-green-400');
+        }
+
+        // Disable radios after submit
+        document.querySelectorAll('input[name="q' + i + '"]').forEach(r => r.disabled = true);
+      });
+
+      const total = quizData.length;
+      const pct = Math.round((correct / total) * 100);
+      const colorClass = pct === 100 ? 'text-green-600' : pct >= 60 ? 'text-blue-600' : 'text-yellow-600';
+      document.getElementById('quizScore').innerHTML = '<span class="font-bold ' + colorClass + '">' + correct + '/' + total + ' correct (' + pct + '%)</span>';
+
+      if (pct === 100) {
+        document.getElementById('quizFeedback').innerHTML = '<div class="bg-green-50 border border-green-200 rounded-lg p-4 text-sm text-green-700"><strong>Perfect score!</strong> You can identify all five budgeting traps. You are well-equipped to catch yourself — and help friends — before falling in.</div>';
+      } else if (pct >= 60) {
+        document.getElementById('quizFeedback').innerHTML = '<div class="bg-blue-50 border border-blue-200 rounded-lg p-4 text-sm text-blue-700"><strong>Good effort!</strong> You got most of them right. Review the feedback above to strengthen your understanding of the traps you missed.</div>';
+      } else {
+        document.getElementById('quizFeedback').innerHTML = '<div class="bg-yellow-50 border border-yellow-200 rounded-lg p-4 text-sm text-yellow-700"><strong>Keep learning!</strong> Re-read the trap descriptions above and try the quiz again. Recognizing these patterns gets easier with practice.</div>';
+      }
+    }
+
+    function resetQuiz() {
+      buildQuiz();
+    }
+
+    // Initialize quiz
+    buildQuiz();
+  </script>
+</body>
+</html>

@@ -1,0 +1,718 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Build Your Budget — Smart Student Budgeting</title>
+  <script src="https://cdn.tailwindcss.com"></script>
+  <script>
+    tailwind.config = {
+      theme: {
+        extend: {
+          colors: {
+            brand: { 50:'#ecfdf5',100:'#d1fae5',200:'#a7f3d0',300:'#6ee7b7',400:'#34d399',500:'#10b981',600:'#059669',700:'#047857',800:'#065f46',900:'#064e3b',950:'#022c22' }
+          }
+        }
+      }
+    }
+  </script>
+  <style>
+    html{scroll-behavior:smooth}
+    body{font-family:system-ui,-apple-system,BlinkMacSystemFont,'Segoe UI',Roboto,sans-serif}
+    @media print {
+      nav, footer, .no-print, #stepsNav { display: none !important; }
+      .print-only { display: block !important; }
+      body { background: white; }
+      main { padding: 0; max-width: 100%; }
+      .shadow-md { box-shadow: none !important; border: 1px solid #e5e7eb; }
+    }
+  </style>
+</head>
+<body class="bg-gray-50 text-gray-800">
+
+  <!-- Navigation -->
+  <nav class="bg-brand-900 text-white sticky top-0 z-50 shadow-lg">
+    <div class="max-w-7xl mx-auto px-4">
+      <div class="flex items-center justify-between h-16">
+        <a href="index.html" class="text-lg font-bold tracking-tight flex items-center gap-2">
+          <span class="text-2xl">💰</span> Smart Student Budgeting
+        </a>
+        <button id="menuBtn" class="lg:hidden p-2 rounded-md hover:bg-brand-800" aria-label="Toggle menu">
+          <svg class="w-6 h-6" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M4 6h16M4 12h16M4 18h16"/></svg>
+        </button>
+        <div class="hidden lg:flex items-center gap-1">
+          <a href="index.html" class="px-3 py-2 rounded-md text-sm font-medium hover:bg-brand-800 transition">Home</a>
+          <a href="income-vs-expenses.html" class="px-3 py-2 rounded-md text-sm font-medium hover:bg-brand-800 transition">Income vs. Expenses</a>
+          <a href="track-spending.html" class="px-3 py-2 rounded-md text-sm font-medium hover:bg-brand-800 transition">Track Spending</a>
+          <a href="budgeting-traps.html" class="px-3 py-2 rounded-md text-sm font-medium hover:bg-brand-800 transition">Budgeting Traps</a>
+          <a href="fifty-thirty-twenty.html" class="px-3 py-2 rounded-md text-sm font-medium hover:bg-brand-800 transition">50/30/20 Rule</a>
+          <a href="build-your-budget.html" class="px-3 py-2 rounded-md text-sm font-medium bg-brand-700">Build Your Budget</a>
+          <a href="references.html" class="px-3 py-2 rounded-md text-sm font-medium hover:bg-brand-800 transition">References</a>
+        </div>
+      </div>
+      <div class="lg:hidden hidden pb-4" id="mobileNav">
+        <a href="index.html" class="block px-3 py-2 rounded-md text-sm font-medium hover:bg-brand-800">Home</a>
+        <a href="income-vs-expenses.html" class="block px-3 py-2 rounded-md text-sm font-medium hover:bg-brand-800">Income vs. Expenses</a>
+        <a href="track-spending.html" class="block px-3 py-2 rounded-md text-sm font-medium hover:bg-brand-800">Track Spending</a>
+        <a href="budgeting-traps.html" class="block px-3 py-2 rounded-md text-sm font-medium hover:bg-brand-800">Budgeting Traps</a>
+        <a href="fifty-thirty-twenty.html" class="block px-3 py-2 rounded-md text-sm font-medium hover:bg-brand-800">50/30/20 Rule</a>
+        <a href="build-your-budget.html" class="block px-3 py-2 rounded-md text-sm font-medium bg-brand-700">Build Your Budget</a>
+        <a href="references.html" class="block px-3 py-2 rounded-md text-sm font-medium hover:bg-brand-800">References</a>
+      </div>
+    </div>
+  </nav>
+
+  <!-- Page Header -->
+  <header class="bg-gradient-to-r from-brand-800 to-brand-700 text-white py-12">
+    <div class="max-w-4xl mx-auto px-4">
+      <p class="text-brand-300 text-sm font-semibold uppercase tracking-widest mb-2">Module 5</p>
+      <h1 class="text-3xl md:text-4xl font-extrabold mb-3">🛠️ Build Your Budget</h1>
+      <p class="text-brand-200 text-lg max-w-2xl">Put everything together. Follow the steps below to create a personalized monthly budget you can actually use.</p>
+    </div>
+  </header>
+
+  <main class="max-w-4xl mx-auto px-4 py-12 space-y-8">
+
+    <!-- Stat Cards -->
+    <section class="grid sm:grid-cols-3 gap-4 no-print">
+      <div class="bg-white rounded-xl shadow-sm p-5 text-center border-t-4 border-brand-500">
+        <p class="text-3xl font-extrabold text-brand-600">5 steps</p>
+        <p class="text-sm text-gray-600 mt-1">to your personalized budget</p>
+      </div>
+      <div class="bg-white rounded-xl shadow-sm p-5 text-center border-t-4 border-emerald-500">
+        <p class="text-3xl font-extrabold text-emerald-600">~10 min</p>
+        <p class="text-sm text-gray-600 mt-1">is all it takes to complete</p>
+      </div>
+      <div class="bg-white rounded-xl shadow-sm p-5 text-center border-t-4 border-amber-500">
+        <p class="text-3xl font-extrabold text-amber-600">PDF</p>
+        <p class="text-sm text-gray-600 mt-1">download your budget when done</p>
+      </div>
+    </section>
+
+    <!-- Pro Tip Box -->
+    <section class="bg-amber-50 border border-amber-200 rounded-2xl p-6 md:p-8 no-print">
+      <div class="flex items-start gap-3">
+        <span class="text-2xl">⭐</span>
+        <div>
+          <h2 class="text-lg font-bold text-amber-800 mb-3">Pro Tip: Review Your Budget Every Sunday Evening</h2>
+          <ul class="space-y-2 text-sm text-amber-900">
+            <li class="flex items-start gap-2"><span class="text-amber-600 mt-0.5">&#10003;</span> <span><strong>Compare planned vs. actual</strong> — check how your real spending matched your budget this week.</span></li>
+            <li class="flex items-start gap-2"><span class="text-amber-600 mt-0.5">&#10003;</span> <span><strong>Adjust for next week</strong> — if you overspent on dining, reduce it next week to stay on track.</span></li>
+            <li class="flex items-start gap-2"><span class="text-amber-600 mt-0.5">&#10003;</span> <span><strong>Celebrate wins</strong> — if you stayed under budget, acknowledge it. Small wins build lasting habits.</span></li>
+          </ul>
+        </div>
+      </div>
+    </section>
+
+    <!-- Step Progress -->
+    <div id="stepsNav" class="no-print bg-white rounded-xl shadow-sm p-4 flex flex-wrap gap-2 justify-center sticky top-20 z-40">
+      <button onclick="goToStep(1)" class="step-btn bg-brand-600 text-white text-xs font-bold px-4 py-2 rounded-full transition" data-step="1">1. Income</button>
+      <button onclick="goToStep(2)" class="step-btn bg-gray-200 text-gray-600 text-xs font-bold px-4 py-2 rounded-full transition" data-step="2">2. Needs</button>
+      <button onclick="goToStep(3)" class="step-btn bg-gray-200 text-gray-600 text-xs font-bold px-4 py-2 rounded-full transition" data-step="3">3. Wants</button>
+      <button onclick="goToStep(4)" class="step-btn bg-gray-200 text-gray-600 text-xs font-bold px-4 py-2 rounded-full transition" data-step="4">4. Savings</button>
+      <button onclick="goToStep(5)" class="step-btn bg-gray-200 text-gray-600 text-xs font-bold px-4 py-2 rounded-full transition" data-step="5">5. Review</button>
+    </div>
+
+    <!-- STEP 1: Income -->
+    <section id="step1" class="step-section">
+      <div class="bg-white rounded-2xl shadow-md p-6 md:p-8">
+        <div class="flex items-center gap-3 mb-6">
+          <span class="bg-brand-600 text-white font-bold rounded-full w-10 h-10 flex items-center justify-center text-lg">1</span>
+          <div>
+            <h2 class="text-xl font-bold text-gray-900">Enter Your Monthly Income</h2>
+            <p class="text-sm text-gray-500">Add all sources of income you receive each month.</p>
+          </div>
+        </div>
+
+        <div class="space-y-4">
+          <div class="grid sm:grid-cols-2 gap-4">
+            <div>
+              <label class="block text-sm font-medium text-gray-700 mb-1">Part-Time Job ($)</label>
+              <input type="number" id="incJob" placeholder="0" min="0" class="budget-input w-full border border-gray-300 rounded-lg px-4 py-2.5 focus:ring-2 focus:ring-brand-500 focus:border-brand-500 outline-none" oninput="updateAll()">
+            </div>
+            <div>
+              <label class="block text-sm font-medium text-gray-700 mb-1">Scholarships / Bursaries ($)</label>
+              <input type="number" id="incScholarship" placeholder="0" min="0" class="budget-input w-full border border-gray-300 rounded-lg px-4 py-2.5 focus:ring-2 focus:ring-brand-500 focus:border-brand-500 outline-none" oninput="updateAll()">
+            </div>
+            <div>
+              <label class="block text-sm font-medium text-gray-700 mb-1">Family Support ($)</label>
+              <input type="number" id="incFamily" placeholder="0" min="0" class="budget-input w-full border border-gray-300 rounded-lg px-4 py-2.5 focus:ring-2 focus:ring-brand-500 focus:border-brand-500 outline-none" oninput="updateAll()">
+            </div>
+            <div>
+              <label class="block text-sm font-medium text-gray-700 mb-1">Student Loans (monthly portion) ($)</label>
+              <input type="number" id="incLoan" placeholder="0" min="0" class="budget-input w-full border border-gray-300 rounded-lg px-4 py-2.5 focus:ring-2 focus:ring-brand-500 focus:border-brand-500 outline-none" oninput="updateAll()">
+            </div>
+            <div>
+              <label class="block text-sm font-medium text-gray-700 mb-1">Other Income ($)</label>
+              <input type="number" id="incOther" placeholder="0" min="0" class="budget-input w-full border border-gray-300 rounded-lg px-4 py-2.5 focus:ring-2 focus:ring-brand-500 focus:border-brand-500 outline-none" oninput="updateAll()">
+            </div>
+          </div>
+
+          <div class="bg-brand-50 rounded-xl p-4 flex justify-between items-center">
+            <span class="font-semibold text-brand-800">Total Monthly Income:</span>
+            <span id="totalIncome" class="text-2xl font-bold text-brand-700">$0.00</span>
+          </div>
+        </div>
+
+        <div class="mt-6 flex justify-end no-print">
+          <button onclick="goToStep(2)" class="bg-brand-600 hover:bg-brand-700 text-white font-semibold px-6 py-2.5 rounded-lg transition">Next: Needs &rarr;</button>
+        </div>
+      </div>
+    </section>
+
+    <!-- STEP 2: Needs -->
+    <section id="step2" class="step-section hidden">
+      <div class="bg-white rounded-2xl shadow-md p-6 md:p-8">
+        <div class="flex items-center gap-3 mb-6">
+          <span class="bg-red-500 text-white font-bold rounded-full w-10 h-10 flex items-center justify-center text-lg">2</span>
+          <div>
+            <h2 class="text-xl font-bold text-gray-900">Essential Expenses (Needs)</h2>
+            <p class="text-sm text-gray-500">These are the things you must pay for every month.</p>
+          </div>
+        </div>
+
+        <div class="space-y-4">
+          <div class="grid sm:grid-cols-2 gap-4">
+            <div>
+              <label class="block text-sm font-medium text-gray-700 mb-1">🏠 Rent / Housing ($)</label>
+              <input type="number" id="needRent" placeholder="0" min="0" class="budget-input w-full border border-gray-300 rounded-lg px-4 py-2.5 focus:ring-2 focus:ring-red-400 focus:border-red-400 outline-none" oninput="updateAll()">
+            </div>
+            <div>
+              <label class="block text-sm font-medium text-gray-700 mb-1">🥦 Groceries ($)</label>
+              <input type="number" id="needGroceries" placeholder="0" min="0" class="budget-input w-full border border-gray-300 rounded-lg px-4 py-2.5 focus:ring-2 focus:ring-red-400 focus:border-red-400 outline-none" oninput="updateAll()">
+            </div>
+            <div>
+              <label class="block text-sm font-medium text-gray-700 mb-1">🚌 Transportation ($)</label>
+              <input type="number" id="needTransport" placeholder="0" min="0" class="budget-input w-full border border-gray-300 rounded-lg px-4 py-2.5 focus:ring-2 focus:ring-red-400 focus:border-red-400 outline-none" oninput="updateAll()">
+            </div>
+            <div>
+              <label class="block text-sm font-medium text-gray-700 mb-1">💡 Utilities (power, water, internet) ($)</label>
+              <input type="number" id="needUtilities" placeholder="0" min="0" class="budget-input w-full border border-gray-300 rounded-lg px-4 py-2.5 focus:ring-2 focus:ring-red-400 focus:border-red-400 outline-none" oninput="updateAll()">
+            </div>
+            <div>
+              <label class="block text-sm font-medium text-gray-700 mb-1">📱 Phone Plan ($)</label>
+              <input type="number" id="needPhone" placeholder="0" min="0" class="budget-input w-full border border-gray-300 rounded-lg px-4 py-2.5 focus:ring-2 focus:ring-red-400 focus:border-red-400 outline-none" oninput="updateAll()">
+            </div>
+            <div>
+              <label class="block text-sm font-medium text-gray-700 mb-1">📚 Textbooks / Course Materials ($)</label>
+              <input type="number" id="needBooks" placeholder="0" min="0" class="budget-input w-full border border-gray-300 rounded-lg px-4 py-2.5 focus:ring-2 focus:ring-red-400 focus:border-red-400 outline-none" oninput="updateAll()">
+            </div>
+            <div>
+              <label class="block text-sm font-medium text-gray-700 mb-1">💊 Health / Medications ($)</label>
+              <input type="number" id="needHealth" placeholder="0" min="0" class="budget-input w-full border border-gray-300 rounded-lg px-4 py-2.5 focus:ring-2 focus:ring-red-400 focus:border-red-400 outline-none" oninput="updateAll()">
+            </div>
+            <div>
+              <label class="block text-sm font-medium text-gray-700 mb-1">🔧 Other Essentials ($)</label>
+              <input type="number" id="needOther" placeholder="0" min="0" class="budget-input w-full border border-gray-300 rounded-lg px-4 py-2.5 focus:ring-2 focus:ring-red-400 focus:border-red-400 outline-none" oninput="updateAll()">
+            </div>
+          </div>
+
+          <div class="bg-red-50 rounded-xl p-4 flex justify-between items-center">
+            <span class="font-semibold text-red-800">Total Needs:</span>
+            <span id="totalNeeds" class="text-2xl font-bold text-red-700">$0.00</span>
+          </div>
+          <div id="needsWarning" class="hidden bg-yellow-50 border border-yellow-200 rounded-lg p-3 text-sm text-yellow-700"></div>
+        </div>
+
+        <div class="mt-6 flex justify-between no-print">
+          <button onclick="goToStep(1)" class="text-brand-600 hover:text-brand-700 font-medium">&larr; Back</button>
+          <button onclick="goToStep(3)" class="bg-brand-600 hover:bg-brand-700 text-white font-semibold px-6 py-2.5 rounded-lg transition">Next: Wants &rarr;</button>
+        </div>
+      </div>
+    </section>
+
+    <!-- STEP 3: Wants -->
+    <section id="step3" class="step-section hidden">
+      <div class="bg-white rounded-2xl shadow-md p-6 md:p-8">
+        <div class="flex items-center gap-3 mb-6">
+          <span class="bg-blue-500 text-white font-bold rounded-full w-10 h-10 flex items-center justify-center text-lg">3</span>
+          <div>
+            <h2 class="text-xl font-bold text-gray-900">Discretionary Expenses (Wants)</h2>
+            <p class="text-sm text-gray-500">Things you enjoy but could live without if needed.</p>
+          </div>
+        </div>
+
+        <div class="space-y-4">
+          <div class="grid sm:grid-cols-2 gap-4">
+            <div>
+              <label class="block text-sm font-medium text-gray-700 mb-1">🍕 Dining Out / Takeout ($)</label>
+              <input type="number" id="wantDining" placeholder="0" min="0" class="budget-input w-full border border-gray-300 rounded-lg px-4 py-2.5 focus:ring-2 focus:ring-blue-400 focus:border-blue-400 outline-none" oninput="updateAll()">
+            </div>
+            <div>
+              <label class="block text-sm font-medium text-gray-700 mb-1">☕ Coffee Shops ($)</label>
+              <input type="number" id="wantCoffee" placeholder="0" min="0" class="budget-input w-full border border-gray-300 rounded-lg px-4 py-2.5 focus:ring-2 focus:ring-blue-400 focus:border-blue-400 outline-none" oninput="updateAll()">
+            </div>
+            <div>
+              <label class="block text-sm font-medium text-gray-700 mb-1">🎬 Entertainment / Streaming ($)</label>
+              <input type="number" id="wantEntertainment" placeholder="0" min="0" class="budget-input w-full border border-gray-300 rounded-lg px-4 py-2.5 focus:ring-2 focus:ring-blue-400 focus:border-blue-400 outline-none" oninput="updateAll()">
+            </div>
+            <div>
+              <label class="block text-sm font-medium text-gray-700 mb-1">👕 Shopping / Clothing ($)</label>
+              <input type="number" id="wantShopping" placeholder="0" min="0" class="budget-input w-full border border-gray-300 rounded-lg px-4 py-2.5 focus:ring-2 focus:ring-blue-400 focus:border-blue-400 outline-none" oninput="updateAll()">
+            </div>
+            <div>
+              <label class="block text-sm font-medium text-gray-700 mb-1">🏋️ Gym / Fitness ($)</label>
+              <input type="number" id="wantGym" placeholder="0" min="0" class="budget-input w-full border border-gray-300 rounded-lg px-4 py-2.5 focus:ring-2 focus:ring-blue-400 focus:border-blue-400 outline-none" oninput="updateAll()">
+            </div>
+            <div>
+              <label class="block text-sm font-medium text-gray-700 mb-1">🎉 Social / Going Out ($)</label>
+              <input type="number" id="wantSocial" placeholder="0" min="0" class="budget-input w-full border border-gray-300 rounded-lg px-4 py-2.5 focus:ring-2 focus:ring-blue-400 focus:border-blue-400 outline-none" oninput="updateAll()">
+            </div>
+            <div>
+              <label class="block text-sm font-medium text-gray-700 mb-1">📦 Subscriptions ($)</label>
+              <input type="number" id="wantSubs" placeholder="0" min="0" class="budget-input w-full border border-gray-300 rounded-lg px-4 py-2.5 focus:ring-2 focus:ring-blue-400 focus:border-blue-400 outline-none" oninput="updateAll()">
+            </div>
+            <div>
+              <label class="block text-sm font-medium text-gray-700 mb-1">🎯 Other Wants ($)</label>
+              <input type="number" id="wantOther" placeholder="0" min="0" class="budget-input w-full border border-gray-300 rounded-lg px-4 py-2.5 focus:ring-2 focus:ring-blue-400 focus:border-blue-400 outline-none" oninput="updateAll()">
+            </div>
+          </div>
+
+          <div class="bg-blue-50 rounded-xl p-4 flex justify-between items-center">
+            <span class="font-semibold text-blue-800">Total Wants:</span>
+            <span id="totalWants" class="text-2xl font-bold text-blue-700">$0.00</span>
+          </div>
+        </div>
+
+        <div class="mt-6 flex justify-between no-print">
+          <button onclick="goToStep(2)" class="text-brand-600 hover:text-brand-700 font-medium">&larr; Back</button>
+          <button onclick="goToStep(4)" class="bg-brand-600 hover:bg-brand-700 text-white font-semibold px-6 py-2.5 rounded-lg transition">Next: Savings &rarr;</button>
+        </div>
+      </div>
+    </section>
+
+    <!-- STEP 4: Savings -->
+    <section id="step4" class="step-section hidden">
+      <div class="bg-white rounded-2xl shadow-md p-6 md:p-8">
+        <div class="flex items-center gap-3 mb-6">
+          <span class="bg-emerald-500 text-white font-bold rounded-full w-10 h-10 flex items-center justify-center text-lg">4</span>
+          <div>
+            <h2 class="text-xl font-bold text-gray-900">Savings &amp; Debt Repayment</h2>
+            <p class="text-sm text-gray-500">Invest in your future self. Even small amounts make a difference.</p>
+          </div>
+        </div>
+
+        <div class="space-y-4">
+          <div class="grid sm:grid-cols-2 gap-4">
+            <div>
+              <label class="block text-sm font-medium text-gray-700 mb-1">🏦 Emergency Fund ($)</label>
+              <input type="number" id="saveEmergency" placeholder="0" min="0" class="budget-input w-full border border-gray-300 rounded-lg px-4 py-2.5 focus:ring-2 focus:ring-emerald-400 focus:border-emerald-400 outline-none" oninput="updateAll()">
+            </div>
+            <div>
+              <label class="block text-sm font-medium text-gray-700 mb-1">💳 Extra Debt Payments ($)</label>
+              <input type="number" id="saveDebt" placeholder="0" min="0" class="budget-input w-full border border-gray-300 rounded-lg px-4 py-2.5 focus:ring-2 focus:ring-emerald-400 focus:border-emerald-400 outline-none" oninput="updateAll()">
+            </div>
+            <div>
+              <label class="block text-sm font-medium text-gray-700 mb-1">📈 Investing / TFSA ($)</label>
+              <input type="number" id="saveInvest" placeholder="0" min="0" class="budget-input w-full border border-gray-300 rounded-lg px-4 py-2.5 focus:ring-2 focus:ring-emerald-400 focus:border-emerald-400 outline-none" oninput="updateAll()">
+            </div>
+            <div>
+              <label class="block text-sm font-medium text-gray-700 mb-1">🎯 Goal Savings (trip, laptop, etc.) ($)</label>
+              <input type="number" id="saveGoal" placeholder="0" min="0" class="budget-input w-full border border-gray-300 rounded-lg px-4 py-2.5 focus:ring-2 focus:ring-emerald-400 focus:border-emerald-400 outline-none" oninput="updateAll()">
+            </div>
+          </div>
+
+          <div class="bg-emerald-50 rounded-xl p-4 flex justify-between items-center">
+            <span class="font-semibold text-emerald-800">Total Savings:</span>
+            <span id="totalSavings" class="text-2xl font-bold text-emerald-700">$0.00</span>
+          </div>
+        </div>
+
+        <div class="mt-6 flex justify-between no-print">
+          <button onclick="goToStep(3)" class="text-brand-600 hover:text-brand-700 font-medium">&larr; Back</button>
+          <button onclick="goToStep(5)" class="bg-brand-600 hover:bg-brand-700 text-white font-semibold px-6 py-2.5 rounded-lg transition">View My Budget &rarr;</button>
+        </div>
+      </div>
+    </section>
+
+    <!-- STEP 5: Review -->
+    <section id="step5" class="step-section hidden">
+      <div class="bg-white rounded-2xl shadow-md p-6 md:p-8">
+        <div class="flex items-center gap-3 mb-6">
+          <span class="bg-brand-600 text-white font-bold rounded-full w-10 h-10 flex items-center justify-center text-lg">5</span>
+          <div>
+            <h2 class="text-xl font-bold text-gray-900">Your Personalized Monthly Budget</h2>
+            <p class="text-sm text-gray-500">Here is your complete budget summary. Review it and make adjustments.</p>
+          </div>
+        </div>
+
+        <!-- Print Header (hidden on screen) -->
+        <div class="print-only hidden mb-6 text-center">
+          <h1 class="text-2xl font-bold">My Monthly Budget Plan</h1>
+          <p class="text-sm text-gray-500">Smart Student Budgeting — OER</p>
+        </div>
+
+        <!-- Summary Cards -->
+        <div class="grid sm:grid-cols-4 gap-4 mb-8">
+          <div class="bg-brand-50 rounded-xl p-4 text-center">
+            <p class="text-xs text-brand-600 font-semibold">Total Income</p>
+            <p id="revIncome" class="text-xl font-bold text-brand-700">$0.00</p>
+          </div>
+          <div class="bg-red-50 rounded-xl p-4 text-center">
+            <p class="text-xs text-red-600 font-semibold">Total Needs</p>
+            <p id="revNeeds" class="text-xl font-bold text-red-700">$0.00</p>
+          </div>
+          <div class="bg-blue-50 rounded-xl p-4 text-center">
+            <p class="text-xs text-blue-600 font-semibold">Total Wants</p>
+            <p id="revWants" class="text-xl font-bold text-blue-700">$0.00</p>
+          </div>
+          <div class="bg-emerald-50 rounded-xl p-4 text-center">
+            <p class="text-xs text-emerald-600 font-semibold">Total Savings</p>
+            <p id="revSavings" class="text-xl font-bold text-emerald-700">$0.00</p>
+          </div>
+        </div>
+
+        <!-- Balance -->
+        <div id="balanceCard" class="rounded-xl p-5 mb-8 text-center">
+          <p class="text-sm font-semibold mb-1">Remaining After All Expenses &amp; Savings</p>
+          <p id="revBalance" class="text-3xl font-extrabold">$0.00</p>
+          <p id="revBalanceMsg" class="text-sm mt-1"></p>
+        </div>
+
+        <!-- Visual Breakdown Bar -->
+        <div class="mb-8">
+          <h3 class="font-bold text-gray-800 mb-3">Budget Allocation</h3>
+          <div class="h-10 bg-gray-100 rounded-full overflow-hidden flex" id="revBar">
+            <div id="revBarNeeds" class="h-10 bg-red-500 transition-all duration-300 flex items-center justify-center text-white text-xs font-bold"></div>
+            <div id="revBarWants" class="h-10 bg-blue-500 transition-all duration-300 flex items-center justify-center text-white text-xs font-bold"></div>
+            <div id="revBarSavings" class="h-10 bg-emerald-500 transition-all duration-300 flex items-center justify-center text-white text-xs font-bold"></div>
+            <div id="revBarRemaining" class="h-10 bg-gray-300 transition-all duration-300 flex items-center justify-center text-gray-600 text-xs font-bold"></div>
+          </div>
+          <div class="flex flex-wrap gap-4 text-xs text-gray-600 mt-2">
+            <span class="flex items-center gap-1"><span class="w-3 h-3 bg-red-500 rounded-full inline-block"></span> Needs <span id="revNeedsPct"></span></span>
+            <span class="flex items-center gap-1"><span class="w-3 h-3 bg-blue-500 rounded-full inline-block"></span> Wants <span id="revWantsPct"></span></span>
+            <span class="flex items-center gap-1"><span class="w-3 h-3 bg-emerald-500 rounded-full inline-block"></span> Savings <span id="revSavingsPct"></span></span>
+            <span class="flex items-center gap-1"><span class="w-3 h-3 bg-gray-300 rounded-full inline-block"></span> Unallocated <span id="revRemPct"></span></span>
+          </div>
+        </div>
+
+        <!-- Detailed Breakdown -->
+        <div class="grid md:grid-cols-3 gap-4 mb-8" id="revDetails">
+          <!-- Filled by JS -->
+        </div>
+
+        <!-- Personalized Tips -->
+        <div id="revTips" class="space-y-2 mb-8"></div>
+
+        <!-- Action Buttons -->
+        <div class="flex flex-wrap gap-3 no-print">
+          <button onclick="window.print()" class="bg-brand-600 hover:bg-brand-700 text-white font-semibold px-6 py-2.5 rounded-lg transition flex items-center gap-2">
+            🖨️ Print / Save as PDF
+          </button>
+          <button onclick="downloadBudget()" class="bg-gray-800 hover:bg-gray-900 text-white font-semibold px-6 py-2.5 rounded-lg transition flex items-center gap-2">
+            📥 Download as Text
+          </button>
+          <button onclick="goToStep(1)" class="bg-gray-200 hover:bg-gray-300 text-gray-700 font-semibold px-6 py-2.5 rounded-lg transition">
+            Edit Budget
+          </button>
+        </div>
+      </div>
+
+      <!-- Integration Section -->
+      <div class="bg-brand-50 border border-brand-200 rounded-2xl p-6 md:p-8 mt-8">
+        <h2 class="text-xl font-bold text-brand-900 mb-4">Bringing It All Together</h2>
+        <p class="text-sm text-gray-700 mb-4">Congratulations — you have built a personalized budget! Here is how what you have learned connects:</p>
+        <div class="grid sm:grid-cols-2 gap-4 text-sm">
+          <div class="flex items-start gap-3">
+            <span class="text-brand-500 font-bold mt-0.5">1.</span>
+            <p><strong>Income vs. Expenses</strong> gave you the framework for understanding your money flow.</p>
+          </div>
+          <div class="flex items-start gap-3">
+            <span class="text-brand-500 font-bold mt-0.5">2.</span>
+            <p><strong>Tracking</strong> showed you how to monitor daily spending and stay aware.</p>
+          </div>
+          <div class="flex items-start gap-3">
+            <span class="text-brand-500 font-bold mt-0.5">3.</span>
+            <p><strong>Budgeting Traps</strong> armed you against the psychological pitfalls that derail budgets.</p>
+          </div>
+          <div class="flex items-start gap-3">
+            <span class="text-brand-500 font-bold mt-0.5">4.</span>
+            <p><strong>The 50/30/20 Rule</strong> gave you a simple ratio to guide your allocation.</p>
+          </div>
+          <div class="flex items-start gap-3 sm:col-span-2">
+            <span class="text-brand-500 font-bold mt-0.5">5.</span>
+            <p><strong>This budget</strong> is your personalized action plan. Print it out, tape it to your wall, and check in every week. Adjust as your income or expenses change.</p>
+          </div>
+        </div>
+        <div class="mt-6 bg-white rounded-xl p-4 text-sm text-gray-600">
+          <strong>Next Steps:</strong> Use the budget tracker in Module 2 to log your actual spending this week. At the end of the month, compare your real numbers to this plan. Adjust for the next month. Repeat. That is all budgeting is — plan, track, adjust, repeat.
+        </div>
+      </div>
+    </section>
+
+    <!-- Key Takeaways -->
+    <section class="bg-brand-50 border border-brand-200 rounded-2xl p-6 md:p-8">
+      <div class="flex items-center gap-2 mb-4">
+        <span class="text-2xl">💡</span>
+        <h2 class="text-xl font-bold text-brand-900">Key Takeaways</h2>
+      </div>
+      <ul class="space-y-2 text-sm text-gray-700">
+        <li class="flex items-start gap-2"><span class="text-brand-500 mt-0.5">&#10003;</span> A budget is a plan, not a punishment. It tells your money where to go instead of wondering where it went.</li>
+        <li class="flex items-start gap-2"><span class="text-brand-500 mt-0.5">&#10003;</span> Review and adjust every week. No budget is perfect on the first try — and that is okay.</li>
+        <li class="flex items-start gap-2"><span class="text-brand-500 mt-0.5">&#10003;</span> Your budget should always be: Income - Needs - Wants - Savings = zero or positive. If negative, cut wants first.</li>
+        <li class="flex items-start gap-2"><span class="text-brand-500 mt-0.5">&#10003;</span> Print or save your budget and keep it visible. Out of sight means out of mind.</li>
+      </ul>
+    </section>
+
+    <!-- Nav -->
+    <div class="flex justify-between items-center pt-4 no-print">
+      <a href="fifty-thirty-twenty.html" class="text-brand-600 hover:text-brand-700 font-medium text-sm flex items-center gap-1">&larr; 50/30/20 Rule</a>
+      <a href="references.html" class="bg-brand-600 hover:bg-brand-700 text-white font-semibold px-6 py-2.5 rounded-lg transition flex items-center gap-2">
+        References &rarr;
+      </a>
+    </div>
+  </main>
+
+  <!-- Footer -->
+  <footer class="bg-brand-950 text-brand-300 py-8 mt-12">
+    <div class="max-w-5xl mx-auto px-4 text-center text-sm space-y-2">
+      <p>Smart Student Budgeting — An Open Educational Resource for EDCI 337</p>
+      <p>Licensed under <a href="https://creativecommons.org/licenses/by/4.0/" target="_blank" rel="noopener" class="underline hover:text-white">Creative Commons Attribution 4.0 International (CC BY 4.0)</a></p>
+      <p class="text-brand-500">&copy; 2026</p>
+    </div>
+  </footer>
+
+  <script>
+    // Mobile menu
+    document.getElementById('menuBtn').addEventListener('click', () => {
+      document.getElementById('mobileNav').classList.toggle('hidden');
+    });
+
+    function currency(v) {
+      return new Intl.NumberFormat("en-CA", { style: "currency", currency: "CAD", maximumFractionDigits: 2 }).format(Number(v || 0));
+    }
+
+    function val(id) { return Number(document.getElementById(id).value || 0); }
+
+    let currentStep = 1;
+
+    function goToStep(n) {
+      currentStep = n;
+      document.querySelectorAll('.step-section').forEach(s => s.classList.add('hidden'));
+      document.getElementById('step' + n).classList.remove('hidden');
+      document.querySelectorAll('.step-btn').forEach(b => {
+        const bs = parseInt(b.dataset.step);
+        if (bs === n) {
+          b.className = 'step-btn bg-brand-600 text-white text-xs font-bold px-4 py-2 rounded-full transition';
+        } else if (bs < n) {
+          b.className = 'step-btn bg-brand-200 text-brand-800 text-xs font-bold px-4 py-2 rounded-full transition';
+        } else {
+          b.className = 'step-btn bg-gray-200 text-gray-600 text-xs font-bold px-4 py-2 rounded-full transition';
+        }
+      });
+      updateAll();
+      window.scrollTo({ top: 0, behavior: 'smooth' });
+    }
+
+    function getIncomeTotal() {
+      return val('incJob') + val('incScholarship') + val('incFamily') + val('incLoan') + val('incOther');
+    }
+    function getNeedsTotal() {
+      return val('needRent') + val('needGroceries') + val('needTransport') + val('needUtilities') + val('needPhone') + val('needBooks') + val('needHealth') + val('needOther');
+    }
+    function getWantsTotal() {
+      return val('wantDining') + val('wantCoffee') + val('wantEntertainment') + val('wantShopping') + val('wantGym') + val('wantSocial') + val('wantSubs') + val('wantOther');
+    }
+    function getSavingsTotal() {
+      return val('saveEmergency') + val('saveDebt') + val('saveInvest') + val('saveGoal');
+    }
+
+    function updateAll() {
+      const income = getIncomeTotal();
+      const needs = getNeedsTotal();
+      const wants = getWantsTotal();
+      const savings = getSavingsTotal();
+      const totalExpenses = needs + wants + savings;
+      const balance = income - totalExpenses;
+
+      // Step totals
+      document.getElementById('totalIncome').textContent = currency(income);
+      document.getElementById('totalNeeds').textContent = currency(needs);
+      document.getElementById('totalWants').textContent = currency(wants);
+      document.getElementById('totalSavings').textContent = currency(savings);
+
+      // Needs warning
+      const needsWarn = document.getElementById('needsWarning');
+      if (income > 0 && needs > income * 0.7) {
+        needsWarn.classList.remove('hidden');
+        needsWarn.innerHTML = '<strong>Heads up:</strong> Your essential expenses are over 70% of your income. Look for ways to reduce costs — shared housing, a cheaper phone plan, or cooking more meals at home.';
+      } else {
+        needsWarn.classList.add('hidden');
+      }
+
+      // Review
+      document.getElementById('revIncome').textContent = currency(income);
+      document.getElementById('revNeeds').textContent = currency(needs);
+      document.getElementById('revWants').textContent = currency(wants);
+      document.getElementById('revSavings').textContent = currency(savings);
+      document.getElementById('revBalance').textContent = currency(balance);
+
+      const balCard = document.getElementById('balanceCard');
+      const balMsg = document.getElementById('revBalanceMsg');
+      if (balance > 0) {
+        balCard.className = 'rounded-xl p-5 mb-8 text-center bg-green-50 border border-green-200';
+        document.getElementById('revBalance').className = 'text-3xl font-extrabold text-green-700';
+        balMsg.textContent = 'You have money left over. Consider adding it to savings or keeping it as a buffer.';
+        balMsg.className = 'text-sm mt-1 text-green-600';
+      } else if (balance === 0) {
+        balCard.className = 'rounded-xl p-5 mb-8 text-center bg-yellow-50 border border-yellow-200';
+        document.getElementById('revBalance').className = 'text-3xl font-extrabold text-yellow-700';
+        balMsg.textContent = 'You are breaking exactly even. No room for surprises — consider trimming wants.';
+        balMsg.className = 'text-sm mt-1 text-yellow-600';
+      } else {
+        balCard.className = 'rounded-xl p-5 mb-8 text-center bg-red-50 border border-red-200';
+        document.getElementById('revBalance').className = 'text-3xl font-extrabold text-red-700';
+        balMsg.textContent = 'You are over budget by ' + currency(Math.abs(balance)) + '. You need to reduce expenses or increase income.';
+        balMsg.className = 'text-sm mt-1 text-red-600';
+      }
+
+      // Bar
+      if (income > 0) {
+        const nPct = Math.round(needs / income * 100);
+        const wPct = Math.round(wants / income * 100);
+        const sPct = Math.round(savings / income * 100);
+        const rPct = Math.max(0, 100 - nPct - wPct - sPct);
+        document.getElementById('revBarNeeds').style.width = Math.min(nPct, 100) + '%';
+        document.getElementById('revBarWants').style.width = Math.min(wPct, 100 - Math.min(nPct, 100)) + '%';
+        document.getElementById('revBarSavings').style.width = Math.min(sPct, Math.max(0, 100 - Math.min(nPct, 100) - Math.min(wPct, 100))) + '%';
+        document.getElementById('revBarRemaining').style.width = rPct + '%';
+
+        document.getElementById('revBarNeeds').textContent = nPct > 8 ? nPct + '%' : '';
+        document.getElementById('revBarWants').textContent = wPct > 8 ? wPct + '%' : '';
+        document.getElementById('revBarSavings').textContent = sPct > 8 ? sPct + '%' : '';
+        document.getElementById('revBarRemaining').textContent = rPct > 8 ? rPct + '%' : '';
+
+        document.getElementById('revNeedsPct').textContent = '(' + nPct + '%)';
+        document.getElementById('revWantsPct').textContent = '(' + wPct + '%)';
+        document.getElementById('revSavingsPct').textContent = '(' + sPct + '%)';
+        document.getElementById('revRemPct').textContent = '(' + rPct + '%)';
+      }
+
+      // Detailed line items
+      const details = document.getElementById('revDetails');
+      const needsItems = [
+        ['Rent/Housing', val('needRent')], ['Groceries', val('needGroceries')], ['Transportation', val('needTransport')],
+        ['Utilities', val('needUtilities')], ['Phone', val('needPhone')], ['Textbooks', val('needBooks')],
+        ['Health', val('needHealth')], ['Other Essentials', val('needOther')]
+      ].filter(([,v]) => v > 0);
+      const wantsItems = [
+        ['Dining Out', val('wantDining')], ['Coffee', val('wantCoffee')], ['Entertainment', val('wantEntertainment')],
+        ['Shopping', val('wantShopping')], ['Gym/Fitness', val('wantGym')], ['Social', val('wantSocial')],
+        ['Subscriptions', val('wantSubs')], ['Other Wants', val('wantOther')]
+      ].filter(([,v]) => v > 0);
+      const savingsItems = [
+        ['Emergency Fund', val('saveEmergency')], ['Debt Payments', val('saveDebt')],
+        ['Investing/TFSA', val('saveInvest')], ['Goal Savings', val('saveGoal')]
+      ].filter(([,v]) => v > 0);
+
+      function renderCol(title, color, items, total) {
+        const rows = items.map(([n,v]) => '<div class="flex justify-between py-1 border-b border-gray-100"><span>' + n + '</span><span class="font-medium">' + currency(v) + '</span></div>').join('');
+        return '<div class="bg-' + color + '-50 rounded-xl p-4"><h4 class="font-bold text-' + color + '-700 mb-2 text-sm">' + title + '</h4><div class="text-sm text-gray-700 space-y-0">' + (rows || '<p class="text-gray-400 italic">None entered</p>') + '</div><div class="flex justify-between pt-2 mt-2 border-t border-' + color + '-200 font-bold text-sm"><span>Total</span><span>' + currency(total) + '</span></div></div>';
+      }
+
+      details.innerHTML = renderCol('Needs', 'red', needsItems, needs) + renderCol('Wants', 'blue', wantsItems, wants) + renderCol('Savings', 'emerald', savingsItems, savings);
+
+      // Tips
+      const tips = [];
+      if (income > 0 && savings === 0) {
+        tips.push({ type: 'warning', text: 'You have not allocated anything to savings. Try to save at least 10% of your income — even $' + Math.round(income * 0.1) + '/month helps.' });
+      }
+      if (income > 0 && savings > 0 && savings / income >= 0.2) {
+        tips.push({ type: 'success', text: 'Excellent! You are saving ' + Math.round(savings / income * 100) + '% of your income. That meets the 50/30/20 guideline.' });
+      } else if (income > 0 && savings > 0 && savings / income >= 0.1) {
+        tips.push({ type: 'info', text: 'You are saving ' + Math.round(savings / income * 100) + '% of your income. Good start — see if you can get closer to 20% over time.' });
+      }
+      if (income > 0 && needs > income * 0.5) {
+        tips.push({ type: 'info', text: 'Your needs take up ' + Math.round(needs / income * 100) + '% of your income (guideline is 50%). This is common on a student budget. Focus on finding savings in rent, groceries, or transportation.' });
+      }
+      if (balance < 0) {
+        tips.push({ type: 'warning', text: 'Your budget is ' + currency(Math.abs(balance)) + ' over. Start by cutting wants — dining out, subscriptions, or shopping are usually the easiest to reduce.' });
+      }
+      if (val('wantCoffee') >= 40) {
+        tips.push({ type: 'info', text: 'Your coffee budget is ' + currency(val('wantCoffee')) + '/month. Brewing at home even half the time could save you ~' + currency(val('wantCoffee') * 0.5) + '/month.' });
+      }
+      if (val('wantSubs') >= 30) {
+        tips.push({ type: 'info', text: 'You spend ' + currency(val('wantSubs')) + '/month on subscriptions. Do a quick audit — are you actively using all of them?' });
+      }
+
+      const tipsEl = document.getElementById('revTips');
+      if (tips.length > 0) {
+        tipsEl.innerHTML = '<h3 class="font-bold text-gray-800 mb-2">Personalized Tips</h3>' + tips.map(t => {
+          const bg = t.type === 'success' ? 'bg-green-50 border-green-200 text-green-700' : t.type === 'warning' ? 'bg-yellow-50 border-yellow-200 text-yellow-700' : 'bg-blue-50 border-blue-200 text-blue-700';
+          return '<div class="' + bg + ' border rounded-lg p-3 text-sm">' + t.text + '</div>';
+        }).join('');
+      } else {
+        tipsEl.innerHTML = '';
+      }
+    }
+
+    function downloadBudget() {
+      const income = getIncomeTotal();
+      const needs = getNeedsTotal();
+      const wants = getWantsTotal();
+      const savings = getSavingsTotal();
+      const balance = income - needs - wants - savings;
+
+      let text = "MY MONTHLY BUDGET PLAN\n";
+      text += "Smart Student Budgeting - OER\n";
+      text += "Generated: " + new Date().toLocaleDateString() + "\n";
+      text += "=".repeat(40) + "\n\n";
+
+      text += "INCOME\n";
+      text += "-".repeat(20) + "\n";
+      if (val('incJob')) text += "Part-Time Job:        " + currency(val('incJob')) + "\n";
+      if (val('incScholarship')) text += "Scholarships:         " + currency(val('incScholarship')) + "\n";
+      if (val('incFamily')) text += "Family Support:       " + currency(val('incFamily')) + "\n";
+      if (val('incLoan')) text += "Student Loans:        " + currency(val('incLoan')) + "\n";
+      if (val('incOther')) text += "Other Income:         " + currency(val('incOther')) + "\n";
+      text += "TOTAL INCOME:         " + currency(income) + "\n\n";
+
+      text += "NEEDS (Essential)\n";
+      text += "-".repeat(20) + "\n";
+      if (val('needRent')) text += "Rent/Housing:         " + currency(val('needRent')) + "\n";
+      if (val('needGroceries')) text += "Groceries:            " + currency(val('needGroceries')) + "\n";
+      if (val('needTransport')) text += "Transportation:       " + currency(val('needTransport')) + "\n";
+      if (val('needUtilities')) text += "Utilities:            " + currency(val('needUtilities')) + "\n";
+      if (val('needPhone')) text += "Phone Plan:           " + currency(val('needPhone')) + "\n";
+      if (val('needBooks')) text += "Textbooks:            " + currency(val('needBooks')) + "\n";
+      if (val('needHealth')) text += "Health:               " + currency(val('needHealth')) + "\n";
+      if (val('needOther')) text += "Other Essentials:     " + currency(val('needOther')) + "\n";
+      text += "TOTAL NEEDS:          " + currency(needs) + "\n\n";
+
+      text += "WANTS (Discretionary)\n";
+      text += "-".repeat(20) + "\n";
+      if (val('wantDining')) text += "Dining Out:           " + currency(val('wantDining')) + "\n";
+      if (val('wantCoffee')) text += "Coffee Shops:         " + currency(val('wantCoffee')) + "\n";
+      if (val('wantEntertainment')) text += "Entertainment:        " + currency(val('wantEntertainment')) + "\n";
+      if (val('wantShopping')) text += "Shopping:             " + currency(val('wantShopping')) + "\n";
+      if (val('wantGym')) text += "Gym/Fitness:          " + currency(val('wantGym')) + "\n";
+      if (val('wantSocial')) text += "Social/Going Out:     " + currency(val('wantSocial')) + "\n";
+      if (val('wantSubs')) text += "Subscriptions:        " + currency(val('wantSubs')) + "\n";
+      if (val('wantOther')) text += "Other Wants:          " + currency(val('wantOther')) + "\n";
+      text += "TOTAL WANTS:          " + currency(wants) + "\n\n";
+
+      text += "SAVINGS & DEBT\n";
+      text += "-".repeat(20) + "\n";
+      if (val('saveEmergency')) text += "Emergency Fund:       " + currency(val('saveEmergency')) + "\n";
+      if (val('saveDebt')) text += "Debt Payments:        " + currency(val('saveDebt')) + "\n";
+      if (val('saveInvest')) text += "Investing/TFSA:       " + currency(val('saveInvest')) + "\n";
+      if (val('saveGoal')) text += "Goal Savings:         " + currency(val('saveGoal')) + "\n";
+      text += "TOTAL SAVINGS:        " + currency(savings) + "\n\n";
+
+      text += "=".repeat(40) + "\n";
+      text += "REMAINING:            " + currency(balance) + "\n";
+      text += "=".repeat(40) + "\n";
+
+      const blob = new Blob([text], { type: 'text/plain' });
+      const a = document.createElement('a');
+      a.href = URL.createObjectURL(blob);
+      a.download = 'my-monthly-budget.txt';
+      a.click();
+      URL.revokeObjectURL(a.href);
+    }
+
+    // Init
+    updateAll();
+  </script>
+</body>
+</html>
